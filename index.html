@@ -17,16 +17,25 @@
 
     <ul class="site-links">
       <li>
-        <a href="#skills-and-abilities" class="skills-and-abilities-link nav-link"> Skills & Abilities </a>
+        <a
+          href="#skills-and-abilities"
+          class="skills-and-abilities-link nav-link"
+        >
+          Skills & Abilities
+        </a>
       </li>
       <li>
-        <a href="#technical-skills" class="skills-link nav-link"> Technical Skills </a>
+        <a href="#technical-skills" class="skills-link nav-link">
+          Technical Skills
+        </a>
       </li>
       <li>
         <a href="#education" class="education-link nav-link"> Education </a>
       </li>
       <li>
-        <a href="#work-history" class="work-history-link nav-link"> Work History </a>
+        <a href="#work-history" class="work-history-link nav-link">
+          Work History
+        </a>
       </li>
     </ul>
 
@@ -38,7 +47,9 @@
             <div>Email: tylerdownie0@gmail.com</div>
             <div>
               GitHub:
-              <a href="https://github.com/tdownie0" class="personal-link">tdownie0</a>
+              <a href="https://github.com/tdownie0" class="personal-link"
+                >tdownie0</a
+              >
             </div>
           </div>
         </div>
@@ -263,32 +274,34 @@
 
   <script>
     // Get the button container
-    const backToTopButtonContainer = document.querySelector(".back-to-top-container");
+    const backToTopButtonContainer = document.querySelector(
+      ".back-to-top-container"
+    );
 
     // Add a scroll event listener to window
     window.addEventListener("scroll", () => {
-        // Get the vertical position of the scroll bar
-        // Fallback to scrollTop if scrollY not supported
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
+      // Get the vertical position of the scroll bar
+      // Fallback to scrollTop if scrollY not supported
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
 
-        // Get the bounding rectangle of the links area
-        const siteLinks = document.querySelector(".site-links");
-        const linksRect = siteLinks.getBoundingClientRect();
-        const linksBottom = linksRect.bottom + window.scrollY;
+      // Get the bounding rectangle of the links area
+      const siteLinks = document.querySelector(".site-links");
+      const linksRect = siteLinks.getBoundingClientRect();
+      const linksBottom = linksRect.bottom + window.scrollY;
 
-        // Show the button container when the user scrolls past the links area
-        if (scrollY > linksBottom) {
-            backToTopButtonContainer.classList.add("show");
-        } else {
-            backToTopButtonContainer.classList.remove("show");
-        }
+      // Show the button container when the user scrolls past the links area
+      if (scrollY > linksBottom) {
+        backToTopButtonContainer.classList.add("show");
+      } else {
+        backToTopButtonContainer.classList.remove("show");
+      }
     });
 
     function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   </script>
 </html>
