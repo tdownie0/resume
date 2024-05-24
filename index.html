@@ -15,6 +15,21 @@
   <body>
     <h3>Tyler Downie</h3>
 
+    <ul class="site-links">
+      <li>
+        <a href="#skills-and-abilities"> Skills & Abilities </a>
+      </li>
+      <li>
+        <a href="#technical-skills"> Technical Skills </a>
+      </li>
+      <li>
+        <a href="#education"> Education </a>
+      </li>
+      <li>
+        <a href="#work-history"> Work History </a>
+      </li>
+    </ul>
+
     <div class="tiles">
       <div>
         <h4>Personal</h4>
@@ -43,7 +58,7 @@
       </div>
 
       <div>
-        <h4>Skills & Abilities</h4>
+        <h4 id="skills-and-abilities">Skills & Abilities</h4>
         <div class="tiles skills-and-abilities">
           <div class="tile">
             <ul>
@@ -78,7 +93,7 @@
             <ul>
               <li>
                 <p>
-                  UI/Design taken into consideration with all programs,
+                  UI/UX Design taken into consideration with all programs,
                   understanding the view from an end user. Experienced in
                   presenting and providing finished products.
                 </p>
@@ -97,7 +112,7 @@
       </div>
     </div>
 
-    <h4>Technical Skills</h4>
+    <h4 id="technical-skills">Technical Skills</h4>
     <div class="tiles skills">
       <div class="tile">
         <div class="tile-header">
@@ -172,7 +187,7 @@
       </div>
     </div>
 
-    <h4>Education</h4>
+    <h4 id="education">Education</h4>
     <div class="tiles education">
       <div class="tile">
         <div class="tile-header">
@@ -203,7 +218,7 @@
       </div>
     </div>
 
-    <h4>Work History</h4>
+    <h4 id="work-history">Work History</h4>
     <div class="tiles work-history">
       <div class="tile">
         <p class="tile-header">Piestar</p>
@@ -241,11 +256,45 @@
         </div>
       </div>
     </div>
+    <div class="back-to-top-container">
+      <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    </div>
   </body>
+
+  <script>
+    // Get the button
+    const backToTopButtonContainer = document.querySelector(".back-to-top-container");
+
+    // Add a scroll event listener to window
+    window.addEventListener("scroll", () => {
+        // Get the vertical position of the scroll bar
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        // Get the bounding rectangle of the links area
+        const siteLinks = document.querySelector(".site-links");
+        const linksRect = siteLinks.getBoundingClientRect();
+        const linksBottom = linksRect.bottom + window.scrollY;
+
+        // Show the button when the user scrolls past the links area
+        if (scrollY > linksBottom) {
+            backToTopButtonContainer.style.opacity = "1";
+        } else {
+            backToTopButtonContainer.style.opacity = "0";
+        }
+    });
+
+    // Scroll to the top function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+  </script>
 </html>
 
 <style>
-  /* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -292,6 +341,10 @@ table {
 }
 /* End of CSS Normalization */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: white;
   font-family: 'Roboto', sans-serif;
@@ -328,6 +381,13 @@ h4 {font-size: 1.777rem;}
 h5 {font-size: 1.333rem;}
 
 small, .text_small {font-size: 0.75rem;}
+
+.site-links {
+  display: flex;
+  justify-content: center;
+  font-size: 1.333rem;
+  gap: 2rem;
+}
 
 .link {
   color: #ffffff;
@@ -398,5 +458,31 @@ small, .text_small {font-size: 0.75rem;}
 
 .proficient-columns, .knowledgeable-columns {
   display: flex;
+}
+
+.back-to-top-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#back-to-top {
+  background-color: #007AF4; /* Match the tile color */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #005CB2;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 </style>
