@@ -17,16 +17,16 @@
 
     <ul class="site-links">
       <li>
-        <a href="#skills-and-abilities"> Skills & Abilities </a>
+        <a href="#skills-and-abilities" class="skills-and-abilities-link nav-link"> Skills & Abilities </a>
       </li>
       <li>
-        <a href="#technical-skills"> Technical Skills </a>
+        <a href="#technical-skills" class="skills-link nav-link"> Technical Skills </a>
       </li>
       <li>
-        <a href="#education"> Education </a>
+        <a href="#education" class="education-link nav-link"> Education </a>
       </li>
       <li>
-        <a href="#work-history"> Work History </a>
+        <a href="#work-history" class="work-history-link nav-link"> Work History </a>
       </li>
     </ul>
 
@@ -38,7 +38,7 @@
             <div>Email: tylerdownie0@gmail.com</div>
             <div>
               GitHub:
-              <a href="https://github.com/tdownie0" class="link">tdownie0</a>
+              <a href="https://github.com/tdownie0" class="personal-link">tdownie0</a>
             </div>
           </div>
         </div>
@@ -262,12 +262,13 @@
   </body>
 
   <script>
-    // Get the button
+    // Get the button container
     const backToTopButtonContainer = document.querySelector(".back-to-top-container");
 
     // Add a scroll event listener to window
     window.addEventListener("scroll", () => {
         // Get the vertical position of the scroll bar
+        // Fallback to scrollTop if scrollY not supported
         const scrollY = window.scrollY || document.documentElement.scrollTop;
 
         // Get the bounding rectangle of the links area
@@ -275,7 +276,7 @@
         const linksRect = siteLinks.getBoundingClientRect();
         const linksBottom = linksRect.bottom + window.scrollY;
 
-        // Show the button when the user scrolls past the links area
+        // Show the button container when the user scrolls past the links area
         if (scrollY > linksBottom) {
             backToTopButtonContainer.style.opacity = "1";
         } else {
@@ -283,7 +284,6 @@
         }
     });
 
-    // Scroll to the top function
     function scrollToTop() {
         window.scrollTo({
             top: 0,
@@ -389,15 +389,18 @@ small, .text_small {font-size: 0.75rem;}
   gap: 2rem;
 }
 
-.link {
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.personal-link {
   color: #ffffff;
 }
 
-.link:hover {
+.personal-link:hover {
   color: #8FC9F4;
 }
 
-/* Common Tile Styles */
 .tiles {
     display: flex;
     flex-wrap: wrap;
@@ -440,16 +443,31 @@ small, .text_small {font-size: 0.75rem;}
   max-width: 600px;
 }
 
+.skills-and-abilities-link:hover {
+  color: #007AF4;
+}
+
 .skills-and-abilities .tile {
   background-color: #007AF4;
+}
+
+.skills-link:hover {
+  color: #F5B700
 }
 
 .skills .tile {
   background-color: #F5B700; 
 }
 
+.education-link:hover {
+  color: #8FC9F4;
+}
 .education .tile {
   background-color: #8FC9F4; 
+}
+
+.work-history-link:hover {
+  color: #F57300;
 }
 
 .work-history .tile {
