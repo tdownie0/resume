@@ -278,9 +278,9 @@
 
         // Show the button container when the user scrolls past the links area
         if (scrollY > linksBottom) {
-            backToTopButtonContainer.style.opacity = "1";
+            backToTopButtonContainer.classList.add("show");
         } else {
-            backToTopButtonContainer.style.opacity = "0";
+            backToTopButtonContainer.classList.remove("show");
         }
     });
 
@@ -386,7 +386,7 @@ small, .text_small {font-size: 0.75rem;}
   display: flex;
   justify-content: center;
   font-size: 1.333rem;
-  gap: 2rem;
+  gap: 2.5%;
 }
 
 .nav-link {
@@ -484,6 +484,13 @@ small, .text_small {font-size: 0.75rem;}
   right: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none; 
+
+}
+
+.back-to-top-container.show {
+  opacity: 1;
+  pointer-events: auto; 
 }
 
 #back-to-top {
