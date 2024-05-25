@@ -13,7 +13,7 @@
     <title>Resume</title>
   </head>
   <body>
-    <h3>Tyler Downie</h3>
+    <h3 id="top-heading">Tyler Downie</h3>
 
     <ul class="site-links">
       <li>
@@ -160,38 +160,44 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div class="tiles skills">
       <div class="tile">
         <div class="tile-header">
           <p>Knowledgeable of</p>
         </div>
         <div class="tile-info">
           <ul class="knowledgeable-columns">
-            <div>
-              <li>AWS</li>
-              <li>React</li>
-              <li>Ruby on Rails</li>
-              <li>TypeScript</li>
+            <div class="knowledgable-row">
+              <div>
+                <li>AWS</li>
+                <li>React</li>
+                <li>Ruby on Rails</li>
+                <li>TypeScript</li>
+              </div>
+              <div>
+                <li>Solidity</li>
+                <li>Rust</li>
+                <li>Kotlin</li>
+                <li>Android Studio</li>
+              </div>
+              <div>
+                <li>Assembly</li>
+                <li>JQuery</li>
+                <li>AJAX</li>
+                <li>Bootstrap</li>
+              </div>
             </div>
-            <div>
-              <li>Solidity</li>
-              <li>Rust</li>
-              <li>Kotlin</li>
-              <li>Android Studio</li>
-            </div>
-            <div>
-              <li>Assembly</li>
-              <li>JQuery</li>
-              <li>AJAX</li>
-              <li>Bootstrap</li>
-            </div>
-            <div>
-              <li>Tailwind</li>
-              <li>Lua</li>
-              <li>R</li>
-              <li>SPSS</li>
-            </div>
-            <div>
-              <li>MATLAB</li>
+            <div class="knowledgable-row">
+              <div>
+                <li>Lua</li>
+                <li>R</li>
+                <li>SPSS</li>
+                <li>MATLAB</li>
+              </div>
+              <div>
+                <li>Tailwind</li>
+              </div>
             </div>
           </ul>
         </div>
@@ -298,10 +304,18 @@
     });
 
     function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      const isMobile = window.innerWidth <= 600;
+
+      if (isMobile) {
+        const topHeading = document.getElementById("top-heading");
+        topHeading.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
     }
   </script>
 </html>
@@ -488,8 +502,9 @@ small, .text_small {font-size: 0.75rem;}
   background-color: #75673B;
 }
 
-.proficient-columns, .knowledgeable-columns {
+.proficient-columns, .knowledgable-columns, .knowledgable-row {
   display: flex;
+  justify-content: center;
 }
 
 .back-to-top-container {
@@ -499,7 +514,6 @@ small, .text_small {font-size: 0.75rem;}
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none; 
-
 }
 
 .back-to-top-container.show {
@@ -519,9 +533,22 @@ small, .text_small {font-size: 0.75rem;}
   transition: all 0.3s ease;
 }
 
-#back-to-top:hover {
-  background-color: #005CB2;
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+#back-to-top:hover, #back-to-top:focus {
+  background-color: #005CB2; 
+  transform: scale(1.05); 
+}
+
+#back-to-top:active {
+  background-color: #004080; 
+  transform: scale(0.95); 
+}
+
+@media (max-width: 600px) {
+  .site-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
 }
 </style>
