@@ -124,7 +124,7 @@
     </div>
 
     <h4 id="technical-skills">Technical Skills</h4>
-    <div class="tiles skills">
+    <div class="tiles skills technical-pair">
       <div class="tile">
         <div class="tile-header">
           <p>Certificates</p>
@@ -381,8 +381,8 @@ body {
 }
 
 div, p {
-    margin-bottom: 1.5rem;
-    padding: 0 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -430,36 +430,36 @@ small, .text_small {font-size: 0.75rem;}
 }
 
 .tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tile {
-    color: #ffffff; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 8px;
-    padding: 16px;
-    min-width: 240px;
-    text-align: center;
-    transition: all 0.3s ease;
+  color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  padding: 16px;
+  min-width: 240px;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 .tile:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .tile-header {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .tile-info {
-    font-size: 1rem;
-    margin: 8px 0;
+  font-size: 1rem;
+  margin: 8px 0;
 }
 
 .personal .tile {
@@ -541,6 +541,12 @@ small, .text_small {font-size: 0.75rem;}
 #back-to-top:active {
   background-color: #004080; 
   transform: scale(0.95); 
+}
+
+@media (max-width: 824px) {
+  .technical-pair {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 600px) {
