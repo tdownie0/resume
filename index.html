@@ -167,7 +167,7 @@
         </div>
         <div class="tile-info">
           <ul class="knowledgeable-columns">
-            <div class="knowledgable-row">
+            <div class="knowledgeable-row">
               <div>
                 <li>AWS</li>
                 <li>React</li>
@@ -187,7 +187,7 @@
                 <li>Bootstrap</li>
               </div>
             </div>
-            <div class="knowledgable-row">
+            <div class="knowledgeable-row">
               <div>
                 <li>Lua</li>
                 <li>R</li>
@@ -501,9 +501,13 @@ small, .text_small {font-size: 0.75rem;}
   background-color: #75673B;
 }
 
-.proficient-columns, .knowledgable-columns, .knowledgable-row {
+.proficient-columns, .knowledgeable-columns, .knowledgeable-row {
   display: flex;
   justify-content: center;
+}
+
+.knowledgeable-columns {
+  flex-direction: column;
 }
 
 .back-to-top-container {
